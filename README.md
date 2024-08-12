@@ -232,7 +232,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 # Lab 4 - Governance/Policy as Code
 
-### Summary: Create and apply policies as code in order to enable governance and promote self-service. In Lab 2 we saw how a user is impacted by policies in place, now is the time to create such policies
+### Summary: Create and apply policies as code in order to enable governance and promote self-service
 
 **Learning Objective(s):**
 
@@ -267,27 +267,27 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 2. Try to run the pipeline and note that the failure due to lack of an approval stage
 
-3. Click **Save** and note that the failure due to lack of an approval stage
+3. Open the pipeline in edit mode and navigate to the “**frontend**” stage
 
-4. Open the pipeline in edit mode and navigate to the “**frontend**” stage
-
-5. Before the canary step add an **Harness Approval** step according to the table  below
+4. Before the Rolling Deployment step add an **Harness Approval** step according to the table below
 
 | Input            | Value            | Notes |
 | ---------------- | ---------------- | ----- |
 | Step Name        |Approval|       |
 | Type of Approval |Harness Approval|       |
 
-6. Configure the Approval step as follows
+5. Configure the Approval step as follows
 
 | Input       | Value             | Notes |
 | ----------- | ----------------- | ----- |
 | Name        |Approval|       |
 | User Groups |All Project Users|       |
 
-7. Repeat for the **backend** stage
+6. Repeat for the **backend** stage
 
-8. Click **Save** and note that the save succeeds without any policy failure
+7. Click **Save**
+
+8. Try to **Run** the pipeline and note that you can succseefully run the pipeline without any policy failure 
 
 # (BONUS) Lab 5 - Continuous Verification
 
