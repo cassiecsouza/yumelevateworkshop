@@ -172,7 +172,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 | Input    | Value      | Notes |
 | -------- | ------     | ----- |
-| Name     |dk|       |
+| Name     |sdk|       |
 | Key Type |client|       |
 
 4. Copy the secret to use later. Note that the key will be redacted once you leave the page.
@@ -289,7 +289,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 8. Click **Save** and note that the save succeeds without any policy failure
 
-#(BONUS) Lab 5 - Continuous Verification
+# (BONUS) Lab 5 - Continuous Verification
 
 ### Summary: Automate the verification of new releases 
 
