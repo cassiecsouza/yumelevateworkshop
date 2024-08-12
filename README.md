@@ -61,7 +61,7 @@
 | Docker Registry Connector  |dockerhub|                                    |
 | Artifact Source Identifier |frontend|                                    |
 | Image Path                 |nikpap/harness-workshop|                                    |
-| Tag                        |<+variable.username>-<+pipeline.sequenceId>| _Switch to expression and set to_  |
+| Tag                        |yum-elevate-workshop|
 
 **Environment**
 
