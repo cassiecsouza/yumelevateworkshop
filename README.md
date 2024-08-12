@@ -79,8 +79,6 @@ The target infrastructure has been pre-created for us. The application will be d
 
 -  From the dropdown select k8s
 
-
-
 | Input | Value | Notes |
 | ----- | ----- | ----- |
 | Name  |k8s|       |
@@ -145,7 +143,6 @@ The target infrastructure has been pre-created for us and we used it in the prev
 |http\://project_id|.cie-bootcamp|.co.uk|
 
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXfmb1N3lAe0EOnEun9neU9y3ilqy3HbxfnWfUMzF3FsykslwgQfU_W4pE0wlt5kYSp6_mTs7cVP0anhJ7uvtsytal2qX3ZEq3vvOT3DOBUzE9SZ3rpwkAHP6e_ExdRbo5VmN2kpxdFlp6u8iGaKwhW_uyAohEmJurkjmEB2Ww?key=cRG2cvp_PHVW0KG2Gq6Y_A)
-
 
 # Lab 3 - Feature Flags
 
@@ -212,8 +209,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 3. Enable the flag by clicking on the **Flag is Disabled** button and click **Save**
 
-
-5. **Run** the pipeline created in previous steps
+4. **Run** the pipeline created in previous steps
 
 **Change the Flag via the UI**
 
@@ -234,69 +230,7 @@ The target infrastructure has been pre-created for us and we used it in the prev
 
 6. Note that your application now does NOT display the special offer
 
-Lab 6 - Continuous Verification
-
-
-### Summary: Automate the verification of new releases 
-
-**Learning Objective(s):**
-
-- Add continuous verification to the deployed service
-
-- Automate release validation
-
-**Steps**
-
-1. In the existing pipeline, within the Deploy backend stage **after** Canary Deployment step click on the plus icon to add a new step
-
-2. Add a **Verify** step with the following configuration
-
-| Input                        | Value  | Notes                                                                                            |
-| ---------------------------- | ------ | ------------------------------------------------------------------------------------------------ |
-| Name                         |Verify|                                                                                                  |
-| Continuous Verification Type |Canary|                                                                                                  |
-| Sensitivity                  |Low| This is to define how sensitive the ML algorithms are going to be on deviation from the baseline |
-| Duration                     |5mins|                                                                                                  |
-
-Click **Save** and then click **Run** to execute the pipeline with the following inputs. As a bonus, save your inputs as an Input Set before executing (see below)
-
-| Input       | Value | Notes       |
-| ----------- | ----- | ----------- |
-| Branch Name |main| Leave as is |
-
-# Lab 4 - Validate Release
-
-**Learning Objective(s):**
-
-- Identify the difference in traffic between normal and canary instances of the application
-
-- Automate release validation
-
-- Use complex deployment strategies to reduce the blast radius
-
-**Steps**:
-
-- While the canary deployment is ongoing navigate to the web page and see if you can spot the canary (use the check release button) 
-
-| project                | domain        | suffix |
-| ---------------------- | ------------- | ------ |
-| http\://\<project\_id>|.cie-bootcamp|.co.uk|
-
-- Drill down to the distribution test tab and run the traffic generation by clicking the **Play** button
-
-- Observe the traffic distribution
-
-- Validate the outcome of the verification on the pipeline execution details
-
-\
-![](https://lh7-us.googleusercontent.com/docsz/AD_4nXdbAmEJ5zQPsKlw_nEknWvYo97pm5eWCXr6vU8-GgIL0ulAOSH9N07PoEcVSknARVQo7Tgj1s31VHqR1I3hu2dMIO1rIX5HHcmTPXoQPoyo8CPv13OhnJN5WVcZqSwUXzdDHmm3PxUnhtpGVl0PAMJ_1wnuodvUbVPBOdnGKQ?key=cRG2cvp_PHVW0KG2Gq6Y_A)
-![](https://lh7-us.googleusercontent.com/docsz/AD_4nXf-5oWX9OfvdmEb9MBm2_h2KKAa_QwmiJoM0fiKrTuxAr6GR4wxeulSlk48gyBK3dykrtIslDSkxpiGytrxH0JaxaQ4ZgTYxbmc8OenAH3nhGCvvOAxkWVjVBp1TRg_qQQi9z8OrNPK4udPtNL1LIyym6Ch5IMzrulFOcXhOQ?key=cRG2cvp_PHVW0KG2Gq6Y_A)
-
-**Bonus**:
-
-- Add a canary rollout from 10% to 50% traffic and see how this impacts the traffic distribution
-
-# Lab 5 - Governance/Policy as Code
+# Lab 4 - Governance/Policy as Code
 
 ### Summary: Create and apply policies as code in order to enable governance and promote self-service. In Lab 2 we saw how a user is impacted by policies in place, now is the time to create such policies
 
@@ -354,3 +288,64 @@ Click **Save** and then click **Run** to execute the pipeline with the following
 7. Repeat for the **backend** stage
 
 8. Click **Save** and note that the save succeeds without any policy failure
+
+#(BONUS) Lab 5 - Continuous Verification
+
+### Summary: Automate the verification of new releases 
+
+**Learning Objective(s):**
+
+- Add continuous verification to the deployed service
+
+- Automate release validation
+
+**Steps**
+
+1. In the existing pipeline, within the Deploy backend stage **after** Canary Deployment step click on the plus icon to add a new step
+
+2. Add a **Verify** step with the following configuration
+
+| Input                        | Value  | Notes                                                                                            |
+| ---------------------------- | ------ | ------------------------------------------------------------------------------------------------ |
+| Name                         |Verify|                                                                                                  |
+| Continuous Verification Type |Canary|                                                                                                  |
+| Sensitivity                  |Low| This is to define how sensitive the ML algorithms are going to be on deviation from the baseline |
+| Duration                     |5mins|                                                                                                  |
+
+Click **Save** and then click **Run** to execute the pipeline with the following inputs. As a bonus, save your inputs as an Input Set before executing (see below)
+
+| Input       | Value | Notes       |
+| ----------- | ----- | ----------- |
+| Branch Name |main| Leave as is |
+
+# (BONUS) Lab 6 - Validate Release
+
+**Learning Objective(s):**
+
+- Identify the difference in traffic between normal and canary instances of the application
+
+- Automate release validation
+
+- Use complex deployment strategies to reduce the blast radius
+
+**Steps**:
+
+- While the canary deployment is ongoing navigate to the web page and see if you can spot the canary (use the check release button) 
+
+| project                | domain        | suffix |
+| ---------------------- | ------------- | ------ |
+| http\://\<project\_id>|.cie-bootcamp|.co.uk|
+
+- Drill down to the distribution test tab and run the traffic generation by clicking the **Play** button
+
+- Observe the traffic distribution
+
+- Validate the outcome of the verification on the pipeline execution details
+
+\
+![](https://lh7-us.googleusercontent.com/docsz/AD_4nXdbAmEJ5zQPsKlw_nEknWvYo97pm5eWCXr6vU8-GgIL0ulAOSH9N07PoEcVSknARVQo7Tgj1s31VHqR1I3hu2dMIO1rIX5HHcmTPXoQPoyo8CPv13OhnJN5WVcZqSwUXzdDHmm3PxUnhtpGVl0PAMJ_1wnuodvUbVPBOdnGKQ?key=cRG2cvp_PHVW0KG2Gq6Y_A)
+![](https://lh7-us.googleusercontent.com/docsz/AD_4nXf-5oWX9OfvdmEb9MBm2_h2KKAa_QwmiJoM0fiKrTuxAr6GR4wxeulSlk48gyBK3dykrtIslDSkxpiGytrxH0JaxaQ4ZgTYxbmc8OenAH3nhGCvvOAxkWVjVBp1TRg_qQQi9z8OrNPK4udPtNL1LIyym6Ch5IMzrulFOcXhOQ?key=cRG2cvp_PHVW0KG2Gq6Y_A)
+
+**Bonus**:
+
+- Add a canary rollout from 10% to 50% traffic and see how this impacts the traffic distribution
