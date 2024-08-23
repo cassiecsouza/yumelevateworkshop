@@ -61,7 +61,7 @@
 | Docker Registry Connector  |dockerhub|                                    |
 | Artifact Source Identifier |frontend|                                    |
 | Image Path                 |nikpap/harness-workshop|                                    |
-| Tag                        |<+variable.org.frontendtag>| _Switch to expression and set to_  |
+| Tag                        |techelevate-827|            |
 
 **Environment**
 
