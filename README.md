@@ -221,20 +221,24 @@ Click **Save** and then click **Run** to execute the pipeline with the following
 
 **Create a Policy to require Approvals**
 
-1. From the secondary menu, expand **Project Setup** and select **Governance Policies**
+1. From the lefthand menu, click on **Project Settings** and select **Policies**
 
 2. Click **Build a Sample Policy**
 
 3. From the suggested list select **Pipeline - Approval**  and click on next
 
-4. Click Next: Enforce Policy
+4. Click Next: Test Policy
 
-5. Set the values according to the table  below and confirm
+5. Click Next: Enforce Policy
+
+6. Set the values according to the table  below and confirm
 
 | Input            | Value        | Notes |
 | ---------------- | ------------ | ----- |
 | Trigger Event    |On Run|       |
 | Failure Strategy |Error & exit|       |
+
+7. When prompted to "Apply Policy?" Click **Yes**
 
 **Test the Policy to require Approvals**
 
